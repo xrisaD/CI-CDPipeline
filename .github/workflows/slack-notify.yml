@@ -1,14 +1,13 @@
-# Only trigger, when the build workflow succeeded
 on:
   workflow_run:
     workflows: ["Node.js CI"]
     types:
       - completed
-name: Slack Notification Demo
+name: Slack Notification
 jobs:
-  slackNotification:
-    name: Slack Notification
+   on-failure:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
     - uses: actions/checkout@v2
     - name: Slack Notification
