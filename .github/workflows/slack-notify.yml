@@ -15,7 +15,6 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_COLOR: '#B22222'
-        SLACK_MESSAGE: SOMETHING WENT WRONG
-        SLACK_TITLE: ERROR Title
+        SLACK_MESSAGE: Something went wrong!
         SLACK_USERNAME: rtCamp
 
