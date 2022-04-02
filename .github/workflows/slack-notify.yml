@@ -10,11 +10,14 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     steps:
     - uses: actions/checkout@v2
+    - name: Print
+      id: set
+      run: echo ${{ github.event.workflow_run.error }}
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_COLOR: '#B22222'
-        SLACK_MESSAGE: Something went wrong!
+        SLACK_MESSAGE:  ${{ github.event.workflow_run.error }}
         SLACK_ICON_EMOJI: '🐛'
 
