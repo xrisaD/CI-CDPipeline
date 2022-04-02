@@ -9,7 +9,7 @@ describe("Version Format Test", () => {
         .expect("Content-Type", /json/)
         .expect(200)
         .expect((res) => {
-            expect(res.body.version).toMatch(/^\d.\d.\d$/)
+            expect(res.body.version).toMatch(/^(\d+).(\d+).(\d+)$/)
         })
         .end((err, res) => {
             if (err) return done(err);
