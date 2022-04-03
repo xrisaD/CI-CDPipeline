@@ -12,6 +12,7 @@ pipeline {
             steps {
                 sh 'curl https://cli-assets.heroku.com/install.sh | sh'
                 sh 'apk add git'
+                sh 'ls -al /usr/bin'
             }
         }
         stage('Build') {
