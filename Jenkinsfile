@@ -8,6 +8,12 @@ pipeline {
         }
     }
     stages {
+        stage('Prebuild') {
+            steps {
+                sh 'apk add heroku'
+                sh 'apk add git'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'npm install'
