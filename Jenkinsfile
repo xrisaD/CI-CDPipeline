@@ -2,6 +2,9 @@
 
 pipeline {
     agent any
+    triggers {
+     githubPush()
+   }
     tools {
         nodejs 'node-8.1.2'
     }
