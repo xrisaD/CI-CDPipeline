@@ -5,7 +5,13 @@ pipeline {
             args '-p 3000:3000' 
         }
     }
-
+    
+    stage('Git') {
+      steps {
+        git 'https://github.com/xrisaD/CI-CDPipeline'
+      }
+    }
+    
     stages {
         stage('Build') { 
             steps {
