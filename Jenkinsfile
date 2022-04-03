@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:16-alpine' 
+            image 'node:16.14-alpine' 
         }
     } 
     stages {
@@ -9,7 +9,6 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm ci'
-                sh 'chown -R 107:113 "/.npm"'
                 sh 'npm run build --if-present' 
             }
         }
