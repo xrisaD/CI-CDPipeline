@@ -8,7 +8,7 @@ pipeline {
     
         stage('Build') { 
             steps {
-                sh 'sudo chown -R 107:113 "/.npm"'
+                sh 'chown -R 107:113 "/.npm"'
                 sh 'npm ci'
                 sh 'npm install'
                 sh 'npm run build --if-present' 
