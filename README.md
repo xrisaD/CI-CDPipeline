@@ -26,5 +26,6 @@ The third one is called *slack-notify*. After one of the two flows is completed,
 App on Heroku: https://version-app.herokuapp.com/
 
 ## 2. A CI/CD with Jenkins
-
+### Description:
+The first step was to create a VM on Google Cloud and set up the Jenkins server on that machine. After that, we had to create a pipeline from the Jenkins UI and a Jenkinsfile inside the github repository. 
 ## Comparision
