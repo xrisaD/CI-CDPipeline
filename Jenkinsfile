@@ -7,10 +7,6 @@ pipeline {
                 sh 'npm run build --if-present' 
             }
         }
-        stage('Test') { 
-            steps {
-                sh 'npm test'
-            }
-        }
+     
     }
 }
