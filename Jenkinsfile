@@ -18,6 +18,11 @@ pipeline {
                 sh 'npm test'
             }
         }
+        stage('Deploy') {
+            steps {
+                sh 'deploy_heroku.sh'
+            }
+        }
     }
     post {
         always {
