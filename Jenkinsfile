@@ -4,15 +4,14 @@ pipeline {
             image 'node:lts-bullseye-slim' 
             args '-p 3000:3000' 
         }
-    }
-    
-    stage('Git') {
-      steps {
-        git 'https://github.com/xrisaD/CI-CDPipeline'
-      }
-    }
-    
+    } 
     stages {
+        stage('Git') {
+           steps {
+             git 'https://github.com/xrisaD/CI-CDPipeline'
+           }
+        }
+    
         stage('Build') { 
             steps {
                 sh 'npm install'
