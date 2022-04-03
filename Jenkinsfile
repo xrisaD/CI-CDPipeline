@@ -15,11 +15,13 @@ pipeline {
         }
         stage('Test') {
             steps {
+                echo "Running tests!"
                 sh 'npm test'
             }
         }
         stage('Deploy') {
             steps {
+                echo "Deploying to Heroku"
                 sh 'deploy_heroku.sh'
             }
         }
