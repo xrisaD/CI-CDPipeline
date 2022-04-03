@@ -5,11 +5,6 @@ pipeline {
         }
     } 
     stages {
-        stage('Git') {
-           steps {
-             git 'https://github.com/xrisaD/CI-CDPipeline'
-           }
-        }
     
         stage('Build') { 
             steps {
