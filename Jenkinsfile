@@ -1,21 +1,41 @@
+#!/usr/bin/env groovy
+
 pipeline {
-    agent {
-        docker {
-            image 'node:16.14-alpine3.14' 
-        }
-    } 
+    agent any
+    tools {
+        nodejs 'node-8.1.3'
+    }
     stages {
-    
-        stage('Build') { 
+        stage('Build') {
             steps {
-                sh 'npm ci'
-                sh 'npm run build --if-present' 
+                sh 'nodejs --version'
+                sh 'npm install'
+                sh 'gulp lint'
             }
         }
-        stage('Test') { 
+        stage('Test') {
             steps {
-                sh 'npm test'
+                sh 'nodejs --version'
+                sh 'gulp test'
             }
+        }
+    }
+    post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        success {
+            echo 'I succeeeded!'
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        changed {
+            echo 'Things were different before...'
         }
     }
 }
