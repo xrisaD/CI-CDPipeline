@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Prebuild') {
             steps {
-                sh 'apk add heroku'
+                sh 'curl https://cli-assets.heroku.com/install.sh | sh'
                 sh 'apk add git'
             }
         }
