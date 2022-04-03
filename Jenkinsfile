@@ -9,8 +9,6 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm ci'
-                sh 'chown -R 107:113 "/.npm"'
-                sh 'npm install'
                 sh 'npm run build --if-present' 
             }
         }
