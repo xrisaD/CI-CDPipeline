@@ -1,6 +1,6 @@
 on:
   workflow_run:
-    workflows: ["Node.js"]
+    workflows: ["onpush", "onpull-request"]
     types:
       - completed
 name: Slack Notification
