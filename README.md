@@ -10,14 +10,14 @@ A CI/CD Pipeline consists of some step that have to be  regularly executed. Ther
 **GitHub Actions** is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
 <br>
 
-## 1. Create a Node.js server
+## 1. A Node.js server
 For this Demo, we implemented a simple Node.js (Express.js) server which returns a JSON with a version (e.g. {version: "0.0.0"}) when a GET request is made to the "/".
 A simple test was implemented which checks that the version has the expected format.
 
-## 2. Create a CI/CD with Github Actions
+## 2. A CI/CD with Github Actions
 
 ### Description:
-Three workflows have been implemented.
+Three workflows have been implemented by just adding 3 yaml files under the .github/workflows directory at the Github repository.
 The first one is called *onpull-request* and starts after a pull request at the main branch. It contains one job which builds and runs the tests. The second one is called *onpush* and starts after a push at the main branch. It builds, runs the tests and deploy the app on Heroku. 
 The third one is called *slack-notify*. After one of the two flows is completed, the Slack Notification flow starts. This workflow contains only one job which will be triggered only if the first workflow has failed and will send a Slack message to notify the developers about the failure.
 ### The Pipeline:
@@ -25,4 +25,6 @@ The third one is called *slack-notify*. After one of the two flows is completed,
 ### The App:
 App on Heroku: https://version-app.herokuapp.com/
 
-## 2. Create a CI/CD with Jenkins
+## 2. A CI/CD with Jenkins
+
+## Comparision
