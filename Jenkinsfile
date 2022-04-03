@@ -22,7 +22,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo "Deploying to Heroku"
-                sh 'deploy_heroku.sh'
+                sh './deploy_heroku.sh'
             }
         }
     }
