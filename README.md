@@ -17,9 +17,9 @@ A simple test was implemented which checks that the version has the expected for
 ## 2. Create a CI/CD with Github Actions
 
 ### Description:
-Two workflows have been implemented.
-The first one is call Node.js and starts after a push or a pull request on the main branch. It contains two jobs. The build and the deploy. The build job builds the server while the deploy job deploys it on Heroku.  
-After the first flow is completed, the Slack Notification flow starts. This workflow contains only one job which will be triggered only if the first workflow has failed and will send a Slack message to notify the developers.
+Three workflows have been implemented.
+The first one is called *onpull-request* and starts after a pull request at the main branch. It contains one job which builds and runs the tests. The second one is called *onpush* and starts after a push at the main branch. It builds, runs the tests and deploy the app on Heroku. 
+The third one is called *slack-notify*. After one of the two flows is completed, the Slack Notification flow starts. This workflow contains only one job which will be triggered only if the first workflow has failed and will send a Slack message to notify the developers about the failure.
 ### The Pipeline:
 ![](imgs/pipeline-github-actions.png)
 ### The App:
