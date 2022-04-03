@@ -2,31 +2,21 @@
 
 pipeline {
     agent any
-    triggers {
-     githubPush()
-   }
-    tools {
-        nodejs 'node-8.1.2'
-    }
     stages {
         stage('Build') {
             steps {
-                sh 'nodejs --version'
                 sh 'npm install'
-                sh 'gulp lint'
             }
         }
         stage('Test') {
             steps {
-                sh 'nodejs --version'
-                sh 'gulp test'
+                sh 'npm test'
             }
         }
     }
     post {
         always {
             echo 'One way or another, I have finished'
-            deleteDir() /* clean up our workspace */
         }
         success {
             echo 'I succeeeded!'
