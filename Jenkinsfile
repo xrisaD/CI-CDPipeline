@@ -28,6 +28,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                branch 'main'   
+            }
             steps {
                 echo "Logging env vars"
                 sh "env"
