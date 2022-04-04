@@ -51,7 +51,7 @@ pipeline {
             echo 'I am unstable'
         }
         failure {
-            echo 'I have faile'
+            echo 'I have failed'
         }
         changed {
             echo 'Changed'
