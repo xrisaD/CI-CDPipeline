@@ -18,6 +18,6 @@ jobs:
       env:
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         SLACK_COLOR: '#B22222'
-        SLACK_MESSAGE:  ${{ github.event.workflow_run.error }}
+        SLACK_MESSAGE:  'There has been an error!'
         SLACK_ICON_EMOJI: '🐛'
 
