@@ -60,7 +60,7 @@ pipeline {
             echo 'I have failed'
         }
         changed {
-            echo 'Things were different before...'
+            echo 'Changed'
         }
     }
 }
