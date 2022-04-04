@@ -4,7 +4,7 @@
 name: onpull-request
 
 on:
-  pull_request:
+  notpull_request:
     branches: 
     - main
 
