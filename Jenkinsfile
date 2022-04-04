@@ -28,9 +28,6 @@ pipeline {
             }
         }
         stage('Deploy') {
-            when {
-                branch 'main'
-            }
             steps {
                 withCredentials([string(credentialsId: 'HEROKU_API_KEY', variable: 'HEROKU_API_KEY')]) {
                     withCredentials([usernamePassword(credentialsId: 'f643630b-cfd9-4d7c-80ba-0e349d706599', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USER')]) {
