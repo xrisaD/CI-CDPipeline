@@ -54,7 +54,7 @@ pipeline {
             echo 'I have failed'
         }
         changed {
-            echo 'Changedd'
+            echo 'Changed'
         }
     }
 }
