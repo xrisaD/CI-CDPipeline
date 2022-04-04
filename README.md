@@ -28,7 +28,8 @@ https://version-app.herokuapp.com/
 ## 2. A CI/CD with Jenkins
 ### Description:
 The first step was to create a VM on Google Cloud and set up the Jenkins server on that machine. After that, we had to create a Multibranch pipeline [[3](#3.)] from the Jenkins UI and a Jenkinsfile inside the Github repository [[4](#4.)].
-
+### The Pipeline:
+![](imgs/pipeline-jenkins.png)
 ### The App: 
 https://version-app-jenkins.herokuapp.com/
 ## Comparison
