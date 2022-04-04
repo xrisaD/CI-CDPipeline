@@ -50,7 +50,7 @@ pipeline {
             echo 'One way or another, I have finished'
         }
         success {
-            echo 'I succeeeded'
+            echo 'Success'
         }
         unstable {
             echo 'I am unstable'
