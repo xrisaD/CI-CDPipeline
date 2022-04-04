@@ -32,10 +32,10 @@ pipeline {
                 withCredentials([string(credentialsId: 'HEROKU_API_KEY', variable: 'HEROKU_API_KEY')]) {
                     withCredentials([usernamePassword(credentialsId: 'f643630b-cfd9-4d7c-80ba-0e349d706599', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USER')]) {
                         sh 'git config credential.helper \'!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_PASSWORD}"; }; f\''
-                        echo "Showing git configs"
-                        sh "git config -l"
-                        echo "Gonna show envs"
-                        sh "env"
+
+                        sh 'echo machine git.heroku.com >> .netrc'
+                        sh 'echo login apikey >> .netrc'
+                        sh "echo password  $HEROKU_API_KEY >> .netrc" 
                         sh './deploy_heroku.sh'
                     }
                     
