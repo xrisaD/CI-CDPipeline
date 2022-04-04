@@ -30,6 +30,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                echo "Checkinfg if we are authenticated to the heroku repo"
+                sh "if git ls-remote heroku >/dev/null ; then echo Authenticated to heroku! ; fi"
+                echo "Ls remote heroku"
+                sh "git ls-remote heroku"
+                echo "Doing git remote show on heroku"
+                sh "git remote show heroku"
                 echo "Deploying to Heroku"
                 sh './deploy_heroku.sh'
             }
