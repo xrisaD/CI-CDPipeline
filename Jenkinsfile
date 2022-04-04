@@ -31,6 +31,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 withCredentials([string(credentialsId: 'HEROKU_API_KEY', variable: 'HEROKU_API_KEY')]) {
+                    echo "Showing remotes"
+                    sh "git branch -a"
                     sh './deploy_heroku.sh'
                 }
             }
