@@ -1,5 +1,5 @@
 on:
-  workflow_run:
+  workflow_run: # run when the workflows are completed
     workflows: ["onpush", "onpull-request"]
     types:
       - completed
@@ -7,7 +7,8 @@ name: Slack Notification
 jobs:
    on-failure:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    # if the pipeline failed
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }} 
     steps:
     - uses: actions/checkout@v2
     - name: Print

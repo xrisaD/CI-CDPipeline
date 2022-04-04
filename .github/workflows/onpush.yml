@@ -12,22 +12,22 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v3 # download the repo
     - name: Use Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v3 # set up node environment
       with:
         node-version: "16.x"
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - run: npm ci # install dependencies
+    - run: npm run build --if-present # build
+    - run: npm test # run tests
 
   deploy:
-    needs: build
+    needs: build # build must have run
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2 # download the repo
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}} # secret
           heroku_app_name: "version-app" #Must be unique in Heroku
           heroku_email: "xrdikonimaki@hotmail.com"
