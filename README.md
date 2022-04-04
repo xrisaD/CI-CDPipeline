@@ -23,19 +23,24 @@ The third one is called *slack-notify*. After one of the two flows is completed,
 ### The Pipeline:
 ![](imgs/pipeline-github-actions.png)
 ### The App:
-App on Heroku: https://version-app.herokuapp.com/
+https://version-app.herokuapp.com/
 
 ## 2. A CI/CD with Jenkins
 ### Description:
 The first step was to create a VM on Google Cloud and set up the Jenkins server on that machine. After that, we had to create a Multibranch pipeline [[3](#3.)] from the Jenkins UI and a Jenkinsfile inside the Github repository [[4](#4.)].
+
+### The App: 
+https://version-app-jenkins.herokuapp.com/
 ## Comparison
-1. Maintenance: Jenkins deployments are typically self-hosted, with users maintaining the servers in their own data centers. GitHub Actions offers a hybrid cloud approach by hosting its own runners that you can use to run jobs, while also supporting self-hosted runners [[5](#5.)].
+1. **Format**: Jenkins has two types of syntax for creating pipelines: Declarative Pipeline and Scripted Pipeline. GitHub Actions uses YAML. Declarative Pipelines are similar to GitHub Actions workflow files [[5](#5.)].
 
-2. Cost: Jenkins is open source and free while Github Actions is “Freemium”. However, the cost of managing Jenkins on the cloud can be unpredictable.
+2. **Maintenance**: Jenkins deployments are typically self-hosted, with users maintaining the servers in their own data centers. GitHub Actions offers a hybrid cloud approach by hosting its own runners that you can use to run jobs, while also supporting self-hosted runners [[5](#5.)].
 
-3. Ease of use: Github Actions is easier compared to Jenkins. Especially, for beginners. 
+3. **Cost**: Jenkins is open source and free while Github Actions is “Freemium”. However, both have costs because the cost of managing Jenkins on the cloud is not negligible and can be unpredictable.
 
-4. Flexibility: With Github Actions you are tied to Github as a Source Code Management (SCM) system. Using Jenkins you can use any SCM such as Gitlab, BitBucket etc.
+4. **Ease of use**: Github Actions is easier compared to Jenkins. Especially, for beginners. 
+
+5. **Flexibility**: With Github Actions you are tied to Github as a Source Code Management (SCM) system. Using Jenkins you can use any SCM such as Gitlab, BitBucket etc.
 
 ## References
 #### 1. [Jenkins (software)](https://en.wikipedia.org/wiki/Jenkins_(software))
