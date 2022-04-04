@@ -4,7 +4,7 @@
 name: onpush
 
 on:
-  push:
+  definetlynotpush:
     branches: [ main ]
 
 jobs:
