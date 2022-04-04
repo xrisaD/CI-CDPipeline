@@ -30,6 +30,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                echo "Showing secret"
+                sh "Heroku api key is $HEROKU_API_KEY"
                 echo "Checkinfg if we are authenticated to the heroku repo"
                 sh "if git ls-remote heroku >/dev/null ; then echo Authenticated to heroku! ; fi"
                 echo "Ls remote heroku"
