@@ -18,7 +18,6 @@ jobs:
       with:
         node-version: "16.x"
     - run: npm ci # install dependencies
-    - run: npm run build --if-present # build
     - run: npm test # run tests
 
   deploy:
