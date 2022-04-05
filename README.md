@@ -32,6 +32,27 @@ The first step was to create a VM on Google Cloud and set up the Jenkins server 
 ![](imgs/pipeline-jenkins.png)
 ### The App: 
 https://version-app-jenkins.herokuapp.com/
+
+### Setup Jenkins
+
+In order to setup Jenkins, follow the official [tutorial](https://www.jenkins.io/doc/book/installing/ ) on how to do it for various platforms
+we installed it for Linux on a Google Cloud VM. The host for Jenkins must be an Internet accessible host if you want to use Github webhooks. You
+can however still setup Jenkins locally and poll the SCM or setup tunneling with [ngrok](https://ngrok.com/). Make sure to install the suggested 
+plugins
+
+#### Installing Jenkins Plugins
+
+Before configuring the pipeline, you need to install the appropriate plugins. For our Jenkinsfile we need the [Github](https://plugins.jenkins.io/github/) and the [Docker](https://plugins.jenkins.io/docker-plugin/) plugins ([Installing plugins](https://www.jenkins.io/doc/book/managing/plugins/)). 
+
+Once you have set up Jenkins click on New Item on the left menu. From there select Pipeline or Multibranch Pipeline (if you want to run builds
+on multiple branches, such as staging and prod). In the General section, select GitHub project and add your GitHub project url (Not with the .git suffix) and your credentials (now a Token with whatever username). On the Build Triggers section select "GitHub hook trigger for GITScm polling" if you want to use GitHub webhooks, otherwise select Poll SCM to periodically check for changes or don't select anything if you only want to run the builds manually.
+
+Finally on the Pipeline section, select "Pipeline script from SCM". Afterwards, select Git as the SCM and add the GitHub project URL. On the "Branches to build" section write "remotes/origin/main". This instructs Jenkins to only build the main branch. Add Jenkinsfile to the script path as that is the pipeline file we use in this repo.
+
+#### Setting up webhook integrations
+
+Finally to set up webhook integrations follow the first section of this [tutorial](https://www.blazemeter.com/blog/how-to-integrate-your-github-repository-to-your-jenkins-project).
+
 ## Comparison
 
 1. **Maintenance**: Jenkins deployments are typically self-hosted, with users maintaining the servers in their own data centers. GitHub Actions offers a hybrid cloud approach by hosting its own runners that you can use to run jobs, while also supporting self-hosted runners [5].
