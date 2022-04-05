@@ -63,8 +63,6 @@ Finally to set up webhook integrations follow the first section of this [tutoria
 
 4. **Flexibility**: With Github Actions you are tied to Github as a Source Code Management (SCM) system. Using Jenkins you can use any SCM such as Gitlab, BitBucket etc.
 
-## How to run the Demo
-1. Clone this repository
 ## References
 1. [Jenkins (software)](https://en.wikipedia.org/wiki/Jenkins_(software))
 2. [Understanding GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)
