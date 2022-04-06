@@ -28,7 +28,7 @@ https://version-app.herokuapp.com/
 ### Run the demo
 
 1. Clone or fork the repo
-2. Create a Slack channel and a heroku app
+2. Create a Slack channel and a Heroku app
 4. Create two secrets (HEROKU_API_KEY, SLACK_WEBHOOK) and pass them as environment variables through the Github Settings.
 
 ## 2. A CI/CD with Jenkins
@@ -40,7 +40,9 @@ The first step was to create a VM on Google Cloud and set up the Jenkins server 
 https://version-app-jenkins.herokuapp.com/
 
 ### Run the demo
-After creating a heroku app, follow the **Setup Jenkins** to install the necessary plugins and and integrate Jenkins with Github. 
+1. Clone or fork the repo
+2. Create a Heroku app
+3. Follow the **Setup Jenkins** to install the necessary plugins and and integrate Jenkins with Github. 
 
 ### Setup Jenkins
 
