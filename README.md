@@ -25,6 +25,12 @@ The third one is called *slack-notify*. After one of the two flows is completed,
 ### The App:
 https://version-app.herokuapp.com/
 
+### Run the demo
+
+1. Clone or fork the repo
+2. Create a Slack channel
+4. Create the secrets (HEROKU_API_KEY, SLACK_WEBHOOK) and pass them as environment variables through the Github Settings.
+
 ## 2. A CI/CD with Jenkins
 ### Description:
 The first step was to create a VM on Google Cloud and set up the Jenkins server on that machine. After that, we had to create a Multibranch pipeline [3] from the Jenkins UI and a Jenkinsfile inside the Github repository [4].
@@ -52,6 +58,7 @@ Finally on the Pipeline section, select "Pipeline script from SCM". Afterwards, 
 #### Setting up webhook integrations
 
 Finally to set up webhook integrations follow the first section of this [tutorial](https://www.blazemeter.com/blog/how-to-integrate-your-github-repository-to-your-jenkins-project).
+
 
 ## Comparison
 
