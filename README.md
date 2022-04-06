@@ -28,16 +28,19 @@ https://version-app.herokuapp.com/
 ### Run the demo
 
 1. Clone or fork the repo
-2. Create a Slack channel
-4. Create the secrets (HEROKU_API_KEY, SLACK_WEBHOOK) and pass them as environment variables through the Github Settings.
+2. Create a Slack channel and a heroku app
+4. Create two secrets (HEROKU_API_KEY, SLACK_WEBHOOK) and pass them as environment variables through the Github Settings.
 
 ## 2. A CI/CD with Jenkins
 ### Description:
-The first step was to create a VM on Google Cloud and set up the Jenkins server on that machine. After that, we had to create a Multibranch pipeline [3] from the Jenkins UI and a Jenkinsfile inside the Github repository [4].
+The first step was to create a VM on Google Cloud and set up the Jenkins server on that machine. After that, we had to create a Multibranch pipeline [3] from the Jenkins UI and a Jenkinsfile inside the Github repository [4]. The Jenkinsfile has 4 stages (Prebuild, Build, Test and Deploy). When we push or do a pull request the pipeline is triggered and the steps at these stages run. However, the Deploy stage runs only when we push at the main branch. All these are executed at a docker container.
 ### The Pipeline:
 ![](imgs/pipeline-jenkins.png)
 ### The App: 
 https://version-app-jenkins.herokuapp.com/
+
+### Run the demo
+After creating a heroku app, follow the **Setup Jenkins** to install the necessary plugins and and integrate Jenkins with Github. 
 
 ### Setup Jenkins
 
