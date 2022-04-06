@@ -42,7 +42,7 @@ https://version-app-jenkins.herokuapp.com/
 ### Run the demo
 1. Clone or fork the repo
 2. Create a Heroku app
-3. Follow the **Setup Jenkins** to install the necessary plugins and and integrate Jenkins with Github. 
+3. Follow the **Setup Jenkins** to install the necessary plugins and integrate Jenkins with Github. 
 
 ### Setup Jenkins
 
